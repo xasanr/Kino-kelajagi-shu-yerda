@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="uz"><!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEO CINEMA X — Modern Animated</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#06060f;color:#fff;overflow-x:hidden}
+/* ====== HEADER ====== */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(10,10,25,.8);backdrop-filter:blur(10px);padding:15px}
+header h1{text-align:center;letter-spacing:4px;font-size:1.6rem;color:#ff2a6d}
+nav{text-align:center;margin-top:8px}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-size:.9rem;opacity:.8}
+nav a:hover{opacity:1}
+section{padding:100px 25px}
+/* ====== HERO ====== */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at top,#1b1b4a,#04040a)}
+.hero h2{font-size:3.2rem;animation:fadeUp 1.5s}
+.hero p{max-width:620px;margin:20px auto;opacity:.85;animation:fadeUp 2s}
+.btn{display:inline-block;margin-top:25px;padding:14px 26px;border-radius:40px;background:linear-gradient(135deg,#ff2a6d,#7a2aff);color:#fff;text-decoration:none;font-weight:bold;animation:pulse 3s infinite}
+/* ====== STATS ====== */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:25px;background:#0b0b1a}
+.stat{background:linear-gradient(145deg,#11112b,#070716);padding:30px;border-radius:25px;text-align:center;animation:float 6s infinite}
+.stat h3{font-size:2.2rem;color:#ff2a6d}
+/* ====== MOVIES ====== */
+.movies{background:#06060f}
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px}
+.movie{background:#0f0f25;border-radius:25px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.6);transition:.4s}
+.movie:hover{transform:scale(1.05)}
+.movie img{width:100%;height:340px;object-fit:cover}
+.movie .info{text-align:center;padding:18px}
+/* ====== HALL ====== */
+.hall{background:#0b0b1a}
+.seats{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;max-width:520px;margin:40px auto}
+.seat{padding:12px;background:#222;border-radius:8px;text-align:center;font-size:12px;cursor:pointer;transition:.3s}
+.seat:hover{background:#444}
+.seat.active{background:#ff2a6d;transform:scale(1.1)}
+/* ====== TEAM ====== */
+.team{background:#06060f}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px}
+.member{background:#0f0f25;padding:25px;border-radius:25px;text-align:center;transition:.4s}
+.member:hover{transform:translateY(-10px)}
+/* ====== CONTACT ====== */
+.contact{background:#0b0b1a}
+.contact input,.contact textarea{width:100%;padding:12px;margin:10px 0;background:#0f0f25;border:none;color:#fff;border-radius:12px}
+footer{text-align:center;padding:25px;background:#000;opacity:.7}
+/* ====== ANIMATIONS ====== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 20px #ff2a6d}50%{box-shadow:0 0 40px #7a2aff}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+</style>
+</head>
+<body>
+<header>
+<h1>NEO CINEMA X</h1>
+<nav>
+<a href="#hero">Bosh sahifa</a>
+<a href="#movies">Kinolar</a>
+<a href="#hall">Zal</a>
+<a href="#team">Jamoa</a>
+<a href="#contact">Aloqa</a>
+</nav>
+</header>
+
+<section class="hero" id="hero">
+<div>
+<h2>Kino kelajagi shu yerda</h2>
+<p>To‘liq animatsiyali, zamonaviy, premium kino platforma. Hech qayerda yo‘q dizayn.</p>
+<a href="#movies" class="btn">Boshlash</a>
+</div>
+</section>
+
+<section class="stats">
+<div class="stat"><h3>150+</h3><p>Filmlar</p></div>
+<div class="stat"><h3>12</h3><p>Zallar</p></div>
+<div class="stat"><h3>IMAX</h3><p>Ovoz</p></div>
+<div class="stat"><h3>VIP</h3><p>Xizmat</p></div>
+</section>
+
+<section class="movies" id="movies">
+<h2 style="text-align:center;margin-bottom:40px">Hozir namoyishda</h2>
+<div class="movie-grid" id="movieGrid"></div>
+</section>
+
+Ro'ziqulov Hasan, [31.01.2026 13:01]
+<section class="hall" id="hall">
+<h2 style="text-align:center">O‘rindiqni tanlang</h2>
+<div class="seats" id="seats"></div>
+<p style="text-align:center;margin-top:20px">O‘rindiq: <span id="seatNum">—</span></p>
+</section>
+
+<section class="team" id="team">
+<h2 style="text-align:center;margin-bottom:30px">Bizning jamoa</h2>
+<div class="team-grid">
+<div class="member"><h3>Director</h3><p>Vision & Strategy</p></div>
+<div class="member"><h3>Engineer</h3><p>Sound & Visual</p></div>
+<div class="member"><h3>Manager</h3><p>Customer Care</p></div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2 style="text-align:center;margin-bottom:20px">Biz bilan bog‘laning</h2>
+<input placeholder="Name">
+<input placeholder="Phone">
+<textarea rows="4" placeholder="Message"></textarea>
+<a href="#" class="btn">Yuborish</a>
+</section>
+
+<footer>© 2026 01 23 </footer>
+
+<script>
+// ES5 JavaScript
+var movies=[
+ {t:'Neon Sky',i:'https://picsum.photos/400/600?21'},
+ {t:'Cyber Night',i:'https://picsum.photos/400/600?22'},
+ {t:'Quantum Run',i:'https://picsum.photos/400/600?23'},
+ {t:'Dark Nova',i:'https://picsum.photos/400/600?24'}
+];
+var grid=document.getElementById('movieGrid');
+for(var i=0;i<movies.length;i++){
+ var d=document.createElement('div');
+ d.className='movie';
+ d.innerHTML='<img src="'+movies[i].i+'"><div class="info"><h3>'+movies[i].t+'</h3><a class="btn" href="#hall">Chipta olish</a></div>';
+ grid.appendChild(d);
+}
+var seats=document.getElementById('seats');
+var out=document.getElementById('seatNum');
+for(var s=1;s<=32;s++){
+ var seat=document.createElement('div');
+ seat.className='seat';
+ seat.innerHTML=s;
+ seat.onclick=function(){
+  var all=document.getElementsByClassName('seat');
+  for(var j=0;j<all.length;j++)all[j].className='seat';
+  this.className='seat active';
+  out.innerHTML=this.innerHTML;
+ };
+ seats.appendChild(seat);
+}
+</script>
+</body>
+</html>
