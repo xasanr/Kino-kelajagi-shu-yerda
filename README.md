@@ -1,1 +1,0 @@
-# Kino-kelajagi-shu-yerda
